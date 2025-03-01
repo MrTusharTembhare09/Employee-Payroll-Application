@@ -1,29 +1,40 @@
 package com.employeepayrollapplication.model;
 
 import jakarta.persistence.*;
-import lombok.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "employees")
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
-    private String gender;
-
-    @Column(nullable = false)
-    private String department;
-
-    @Column(nullable = false)
     private double salary;
+
+    // Default Constructor
+    public Employee() {}
+
+    // Constructor using DTO
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public double getSalary() { return salary; }
+    public void setSalary(double salary) { this.salary = salary; }
 }
+
+
+
+
 
 
