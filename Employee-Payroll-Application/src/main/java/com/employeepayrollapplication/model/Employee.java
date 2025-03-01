@@ -13,9 +13,17 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String gender;
+
+    @Column(nullable = false)
     private String department;
+
+    @Column(nullable = false)
     private double salary;
 }
+
 
